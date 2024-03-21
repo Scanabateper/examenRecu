@@ -15,15 +15,23 @@ public class ControlCompuertas {
 	public static void main(String[] args) {
 
 		System.out.println(
-				"Este programa lee el nivel de agua de una presa y permite abrir compuertas si tenemos permiso (el nivel es superior a 50) y las compuertas están verificadas.");
+				"Este programa lee el nivel de agua de una presa y permite abrir compuertas si tenemos permiso (el nivel es superior a 50) y las compuertas estan verificadas.");
 
 		int nivel = leerNivelAgua();
 
 		mostrarMenu(nivel);
 
 	}
-
+	/**
+	 * @author 1AW3-5 Asier
+	 * Este metodo muestra el menu en la consola y deja elegir una opcion.
+	 * 
+	 * 
+	 * @param mostrarMenu
+	 * @return menu
+	 */
 	public static void mostrarMenu(int nivel) {
+		
 		int opcion = 0;
 		do {
 			System.out.println();
@@ -37,7 +45,7 @@ public class ControlCompuertas {
 			System.out.println("	4. Verificar compuertas, estado: " + (compuertasVerificadas ? "VERIFICADAS" : "NO VERIFICADAS"));
 			System.out.println("5. Salir");
 			System.out.println();
-			System.out.print("Introduce opción: ");
+			System.out.print("Introduce opcion: ");
 			opcion = teclado.nextInt();
 			switch (opcion) {
 			case 1:
@@ -48,7 +56,7 @@ public class ControlCompuertas {
 			case 2:
 				if(abrirCompuertas()) {
 					System.out.println();
-					System.out.print("¡Compuertas abiertas!");
+					System.out.print("Compuertas abiertas!");
 				}else {
 					System.out.println();
 					System.out.print("No se cumplen las condiciones para abrir compuertas.");
@@ -65,7 +73,7 @@ public class ControlCompuertas {
 				compuertasVerificadas = verificarCompuertas();
 				if(compuertasVerificadas) {
 					System.out.println();
-					System.out.print("¡Compuertas verificadas!");
+					System.out.print("Compuertas verificadas!");
 				}
 				break;
 			default:
